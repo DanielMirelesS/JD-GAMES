@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+:root{
+    --prim: #494949;
+    --primOscuro: rgb(32, 32, 32);
+    --secundario: #455dca;
+    --secundarioOscur: #000000;
+    --blanco: #fff;
+    --negro: #000;
+
+    --fuentePrincipal: 'Poppins', sans-serif;
+}
+
+html{
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+*, *:before, *:after{
+    box-sizing: inherit;
+}
+
+
+body{
+    background-color: var(--prim);
+    font-size: 1.6rem;
+    line-height: 1.5;
+    
+}
+
+p{
+    font-size: 1.8rem;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--blanco);
+}
+
+a{
+    text-decoration: none;
+}
+
+img{
+    max-width: 100%;
+    
+}
+h1,h2,h3{
+    text-align: center;
+    color:var(--secundario);
+    font-family: var(--fuentePrincipal);
+}
+h1{
+    font-size: 4rem;
+}
+h2{
+    font-size: 3.2rem;
+}
+h3{
+    font-size: 2.4rem;
+}
+/**header**/
+.header {
+    display: flex;
+    justify-content: center;
+   
+}
+
+.header__logo {
+    margin:2rem 0;
+    width: 100px;
+}
+/**Footer**/
+.footer{
+    background-color: var(--primOscuro);
+    padding: 1rem 0;
+    margin-top: 2rem;
+}
+
+.footer__texto{
+    text-align: center;
+    font-family: var(--fuentePrincipal);
+    font-size: 2rem;
+}
+/**Nav**/
+.navegacion{
+    background-color: var(--primOscuro);
+    padding:1rem 0;
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+}
+
+.navegacion__enlace{
+    font-family: var(--fuentePrincipal);
+    color: var(--blanco);
+    font-size: 2rem;
+    
+}
+
+
+.navegacion__enlace--activo,
+.navegacion__enlace:hover{
+    color: var(--secundario);
+}

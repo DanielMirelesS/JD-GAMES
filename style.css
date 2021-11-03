@@ -1,0 +1,454 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+:root{
+    --prim: rgb(63, 63, 63);
+    --primOscuro: rgb(32, 32, 32);
+    --secundario: #52aaf2;
+    --secundarioOscur: #3d75b4;
+    --blanco: #fff;
+    --negro: #000;
+
+    --fuentePrincipal: 'Poppins', sans-serif;
+}
+
+html{
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+*, *:before, *:after{
+    box-sizing: inherit;
+}
+
+
+body{
+    background-color: var(--prim);
+    font-size: 1.6rem;
+    line-height: 1.5;
+    
+}
+
+p{
+    font-size: 1.8rem;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--blanco);
+}
+
+a{
+    text-decoration: none;
+}
+
+img{
+    max-width: 100%;
+    
+}
+h1,h2,h3{
+    text-align: center;
+    color:var(--secundario);
+    font-family: var(--fuentePrincipal);
+}
+h1{
+    font-size: 4rem;
+}
+h2{
+    font-size: 3.2rem;
+}
+h3{
+    font-size: 2.4rem;
+}
+/**header**/
+.header {
+    display: flex;
+    justify-content: center;
+    
+}
+
+.header__logo {
+    margin:1rem 0;
+    width: 100px;
+    
+}
+/**Footer**/
+.footer{
+    background-color: var(--primOscuro);
+    padding: 1rem 0;
+    margin-top: 2rem;
+}
+
+.footer__texto{
+    text-align: center;
+    font-family: var(--fuentePrincipal);
+    font-size: 2rem;
+}
+/**Nav**/
+.navegacion{
+    background-color: var(--primOscuro);
+    padding:1rem 0;
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+}
+
+.navegacion__enlace{
+    font-family: var(--fuentePrincipal);
+    color: var(--blanco);
+    font-size: 2rem;
+    padding: 0 2rem;
+    
+}
+
+
+.navegacion__enlace--activo,
+.navegacion__enlace:hover{
+    color: var(--secundario);
+}
+
+/**Alinear consolas**/
+.alinear__cartas{
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 60vh;
+}
+
+/**Crea la carta del xbox**/
+.cartax{
+    
+    position: relative;
+    width: 600px;
+    height: 350px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    border-radius: 20px;
+    transition: 0.5s;
+}
+
+/**Modifica la carta**/
+.cartax .logo{
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+/**Dibuja un circulo blanco en la carta**/
+.cartax .logo::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    background:white;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    clip-path: circle(120px at center);
+    transition: 0.5s;
+}
+
+/**Abre la carta con un color**/
+.cartax:hover .logo:before{
+    background:#52f288;
+    clip-path:  circle(400px at center);
+}
+
+/**La imagen dentro de la carta y su movimiento**/
+.cartax img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    height: 200px;
+    transition: 0.5s;
+    pointer-events: none;
+}
+
+/**Efecto de hover en la img**/
+.cartax:hover img{
+    transition: 0.4s;
+    left: 70%;
+    height: 450px;
+}
+
+/**Contenido de la carta, hacer invisible el texto**/
+.cartax .cont{
+    position: relative;
+    width: 50%;
+    padding: 20px 20px 20px 40px;
+    left: 20%;
+    transition: 0.4s;
+    opacity: 0;
+    visibility: hidden;
+}
+
+/**Hacer visible el texto y mov**/
+.cartax:hover .cont{
+    left:0;
+    opacity: 1;
+    visibility: visible;
+}
+
+/**Color y texto de carta modific**/
+.cartax .cont h2{
+    color: black;
+    text-transform: uppercase;
+    font-size: 2em;
+    line-height: 1em;
+}
+
+/**Cambiar color del parrafo**/
+.cartax .cont p{
+    color: white;
+}
+
+/**Forma y color del boton para ver**/
+.cartax .cont a{
+    color: white;
+    position: relative;
+    padding: 10px 20px;
+    border-radius: 10px;
+    background: black;
+    color: white;
+    margin-top: 10px;
+    display: inline-block;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+/**Crea la carta del play**/
+.cartap{
+    
+    position: relative;
+    width: 600px;
+    height: 350px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    border-radius: 20px;
+    transition: 0.5s;
+}
+
+/**Modifica la carta**/
+.cartap .logop{
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+/**Dibuja un circulo blanco en la carta**/
+.cartap .logop::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    background:white;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    clip-path: circle(120px at center);
+    transition: 0.5s;
+}
+
+/**Abre la carta con un color**/
+.cartap:hover .logop:before{
+    background:#0529ca;
+    clip-path:  circle(400px at center);
+}
+
+/**La imagen dentro de la carta y su movimiento**/
+.cartap img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    height: 200px;
+    transition: 0.5s;
+    pointer-events: none;
+}
+
+/**Efecto de hover en la img**/
+.cartap:hover img{
+    transition: 0.4s;
+    left: 70%;
+    height: 450px;
+}
+
+/**Contenido de la carta, hacer invisible el texto**/
+.cartap .cont{
+    position: relative;
+    width: 50%;
+    padding: 20px 20px 20px 40px;
+    left: 20%;
+    transition: 0.4s;
+    opacity: 0;
+    visibility: hidden;
+}
+
+/**Hacer visible el texto y mov**/
+.cartap:hover .cont{
+    left:0;
+    opacity: 1;
+    visibility: visible;
+}
+
+/**Color y texto de carta modific**/
+.cartap .cont h2{
+    color: gray;
+    text-transform: uppercase;
+    font-size: 2em;
+    line-height: 1em;
+}
+
+/**Cambiar color del parrafo**/
+.cartap .cont p{
+    color: white;
+}
+
+/**Forma y color del boton para ver**/
+.cartap .cont a{
+    color: white;
+    position: relative;
+    padding: 10px 20px;
+    border-radius: 10px;
+    background: white;
+    color: black;
+    margin-top: 10px;
+    display: inline-block;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.nosotros{
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 2 rem;
+}
+.nosotros img{
+    width: 80%;
+    margin-left: 10%;
+}
+
+
+.nosotros___imagen{
+    width: 10%;
+}
+
+.toggle-button{
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+  }
+
+.toggle-button .bar{
+    height: 3px;
+    width: 100%;
+    background-color: rgb(224, 224, 224);
+    border-radius: 15px;
+}
+
+@media (max-width: 800px) { 
+    .cartax:hover img{
+        transition: 0.4s;
+        left: 70%;
+        height: 250px;
+    }
+
+    .cartap:hover img{
+        transition: 0.4s;
+        left: 70%;
+        height: 250px;
+    }
+
+    .navegacion .navegacion__enlace{
+        padding: 0 1rem;
+    }
+
+    .contenedor .nosotros{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contenedor .nosotros p{
+        text-align: justify;
+    }
+
+    .contenedor .nosotros img{
+        border-radius: 10px;
+    }
+
+
+
+    
+}
+
+@media (max-width: 600px) { 
+    .alinear__cartas{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cartax{
+        display: block;
+    }
+
+    .cartap{
+        display: block;
+    }
+
+    .cartap .cont{
+        width: 58%; /*----*/
+    }
+
+    .cartax{
+        width: 100%;
+    }
+
+    .cartap{
+        width: 100%;
+    }
+
+    .cartap:hover img{
+        transition: 0.4s;
+        left: 75%;
+        height: 250px;
+    }
+
+    .contenedor h1{
+        font-size: 3rem;
+    }
+
+    .navegacion{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navegacion__enlace{
+        font-size: 1.5rem;
+        margin: 1rem 0;
+    }
+
+    .footer__texto{
+        font-size: 1rem;
+    }
+
+    
+    .contenedor .nosotros p{
+        text-align: justify;
+        font-size: 1.5rem;
+    }
+
+
+
+}
