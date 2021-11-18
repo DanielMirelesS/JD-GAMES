@@ -1,26 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JD GAMES</title>
-    <link rel="stylesheet" href="normalize.css">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <header class="header">
-        <a href="index.html">
-            <img class="header__logo" src="logora.png" alt="Logotipo">
-        </a>
-    </header>
-
-    <nav class="navegacion">
-        <a class= "navegacion__enlace" href="index.html">CONSOLAS</a>
-        <a class= "navegacion__enlace navegacion__enlace--activo" href="#">NOSOTROS</a>
-        <a class= "navegacion__enlace" href="catalogoX.html">C. XBOX</a>
-        <a class= "navegacion__enlace" href="catalogoP.html">C. PLAY</a>
-    </nav>
+<?php include 'includes/templates/header.php'; ?>
 
     <main class= "contenedor">
         <h1>SOBRE NOSOTROS</h1>
@@ -36,7 +14,7 @@
                      Ut ut lacinia dolor, eget tempus turpis. Sed rhoncus est non ullamcorper euismod. Quisque a ante nec justo dignissim tempor. Aliquam porta vel sem eu pellentesque. Etiam mauris neque, porta pulvinar mollis vel, vestibulum sed neque. 
                      Duis ut arcu sit amet purus accumsan dapibus quis quis augue.</p>    
             </div>
-            <img class="nosotros__imagen" src="nosotross.jpg" alt="img nosotros">
+            <img class="nosotros__imagen" src="/img/nosotross.jpg" alt="img nosotros">
         </div>
     </main>
     
