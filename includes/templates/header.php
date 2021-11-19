@@ -27,7 +27,7 @@
     <!-------------------------------------------------------------------------------->
 
     <nav class="navegacion">
-        <a class= "navegacion__enlace navegacion__enlace--activo" href="#">CONSOLAS</a>
+        <a class= "navegacion__enlace navegacion__enlace--activo" href="index.php">CONSOLAS</a>
         <a class= "navegacion__enlace" href="nosotros.php">NOSOTROS</a>
         <a class= "navegacion__enlace" href="catalogoX.php">C. XBOX</a>
         <a class= "navegacion__enlace" href="catalogoP.php">C. PLAY</a>

@@ -5,8 +5,4 @@
     </main>
     
 </main>
-    <footer class="footer">
-        <p class="footer__texto">JD GAMES - TODOS LOS DERECHOS RESERVADOS 2021.</p>
-    </footer>
-</body>
-</html>
+<?php include 'includes/templates/footer.php'; ?>
