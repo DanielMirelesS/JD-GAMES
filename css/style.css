@@ -96,6 +96,19 @@ h3{
     
 }
 
+.botonNueva{
+    font-family: var(--fuentePrincipal);
+    color: var(--blanco);
+    font-size: 1.7rem;
+    padding-top:1.5rem;
+    padding-bottom:1.5rem;
+    padding-left:40px;
+    padding-right:40px;
+    background-color:black;  
+    
+    
+}
+
 
 .navegacion__enlace--activo,
 .navegacion__enlace:hover{
@@ -217,6 +230,7 @@ h3{
     font-weight: 700;
 }
 
+
 /**Crea la carta del play**/
 .cartap{
     
@@ -322,6 +336,8 @@ h3{
     text-decoration: none;
     font-weight: 700;
 }
+
+
 
 .nosotros{
     display:grid;

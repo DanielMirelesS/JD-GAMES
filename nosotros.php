@@ -1,4 +1,7 @@
-<?php include 'includes/templates/header.php'; ?>
+<?php 
+    require 'includes/funciones.php';
+    incluirTemplate('header'); 
+?>
 
     <main class= "contenedor">
         <h1>SOBRE NOSOTROS</h1>
@@ -18,9 +21,6 @@
         </div>
     </main>
     
-</main>
-    <footer class="footer">
-        <p class="footer__texto">JD GAMES - TODOS LOS DERECHOS RESERVADOS 2021.</p>
-    </footer>
-</body>
-</html>
+<?php
+    incluirTemplate('footer'); 
+?>
