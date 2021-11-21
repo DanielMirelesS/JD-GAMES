@@ -337,8 +337,23 @@ h3{
     font-weight: 700;
 }
 
+.alerta{
+    font: var(--fuentePrincipal);
+    font-family: var(--fuentePrincipal);
+    padding: 0.5rem;
+    text-align: center;
+    color: white;
+    text-transform: uppercase;
+    margin: 1rem 0;
+}
 
+.error{
+    background-color: rgb(143, 3, 3);
+}
 
+.exito{
+    background-color: rgb(37, 177, 32);
+}
 .nosotros{
     display:grid;
     grid-template-columns: repeat(2, 1fr);
