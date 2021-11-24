@@ -37,7 +37,7 @@
         <div class="navbar-links">
             <ul>
                 <li><a href="index.php">Inicio</a></li>
-                <li><a href="catalogoP.php">Catalogo</a></li>
+                <li><a href="catalogoX.php">Catalogo</a></li>
                 <li><a href="perror404.php">Accesorios</a></li>
             </ul>
         </div>
