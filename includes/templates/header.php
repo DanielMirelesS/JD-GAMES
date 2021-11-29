@@ -39,14 +39,15 @@
     <nav class="navegacion">
         <a class= "navegacion__enlace navegacion__enlace--activo" href="index.php">CONSOLAS</a>
         <a class= "navegacion__enlace" href="nosotros.php">NOSOTROS</a>
-        <a class= "navegacion__enlace" href="catalogoX.php">CATÁLOGO</a>
+        <a class= "navegacion__enlace" href="/catalogoX.php">CATÁLOGO</a>
 
         <?php if(!$auth): ?>
             <a class= "navegacion__enlace" href="login.php">Iniciar sesion</a>
         <?php endif; ?>
 
         <?php if($auth): ?>
-            <a class= "navegacion__enlace" href="cerrar-sesion.php">Cerrar sesion</a>
+            <a class= "navegacion__enlace" href="/admin/index.php">ADMINISTRADOR</a>
+            <a class= "navegacion__enlace" href="../../cerrar-sesion.php">Cerrar sesion</a>
         <?php endif; ?>
 
     </nav>
