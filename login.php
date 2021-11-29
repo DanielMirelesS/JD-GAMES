@@ -84,6 +84,9 @@
 
             <input type="submit" value="Iniciar Sesión">
         </form>
+        <div>
+            <a href="registro.php">No tienes una cuenta? Registrate aquí</a>
+        </div>
     </main>
 
 <?php

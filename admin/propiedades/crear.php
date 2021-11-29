@@ -32,9 +32,9 @@
         var_dump($_POST);
         echo "</pre>";*/
 
-        echo "<pre>";
+        /*echo "<pre>";
         var_dump($_FILES);
-        echo "</pre>";
+        echo "</pre>";*/
 
         $titulo =  mysqli_real_escape_string( $db, $_POST['titulo'] );
         $precio = (int)mysqli_real_escape_string( $db, $_POST['precio'] );
@@ -105,7 +105,7 @@
             //Insertar en la base de datos
             $query = " INSERT INTO VIDEOJUEGO(NOMBRE, PRECIO, DESCRIPCION, IMAGEN, EXISTENCIA, ID_CLASIFICACION)
                         VALUES('$titulo', $precio, '$descripcion', '$nombreImagen', $existencia, $ID_clasificacion) ";
-
+                
             //echo $query;
             $resultado = mysqli_query($db, $query);
             if($resultado){
@@ -113,14 +113,12 @@
                 header('Location: /admin?resultado=1');
             }
         }
-
-
     }
 
     
     incluirTemplate('header');
 ?>
-
+    <!----------------------------------------------MAIN-------------------------------------------------------------->
     <main class = "contenedor">
         <h1>Crear</h1>
 
