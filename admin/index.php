@@ -1,8 +1,13 @@
 <?php
     require '../includes/funciones.php';
     $auth = estaAutenticado();
+    $verificarAdmin = esAdmin();
 
     if(!$auth){
+        header('Location: /');
+    }
+
+    if(!$verificarAdmin){
         header('Location: /');
     }
 

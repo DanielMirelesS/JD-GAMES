@@ -16,3 +16,15 @@
         }
         return false;
     }
+
+    function esAdmin() : bool{
+        session_start();
+
+        $admin = $_SESSION['admin'];
+
+        if($admin == 1){
+            return true;
+        }
+        return false;
+    }
+    
