@@ -6,6 +6,8 @@
 
     $auth = $_SESSION['login'] ?? false;
 
+        
+
 ?>
 
 <!DOCTYPE html>
@@ -46,8 +48,14 @@
         <?php endif; ?>
 
         <?php if($auth): ?>
-            <a class= "navegacion__enlace" href="/admin/index.php">ADMINISTRADOR</a>
+            <?php if($_SESSION['admin'] == '1'){ ?>
+                <a class= "navegacion__enlace" href="/admin/index.php">ADMINISTRADOR</a>
+            <?php } ?>
             <a class= "navegacion__enlace" href="../../cerrar-sesion.php">Cerrar sesion</a>
         <?php endif; ?>
+
+        
+
+       
 
     </nav>

@@ -10,11 +10,20 @@
     //Arreglo con mensajes de errores 
     $errores = [];
 
+    $email      = '';
+    $password   = '';
+    $nombre     = '';
+    $apellido   = '';
+    $calle      = '';
+    $ciudad     = '';
+    $estado     = '';
+    $cp         = '';
+    $admin      = "false";
     //----------------------------------------------SERVER-------------------------------------------------------------->
     if($_SERVER['REQUEST_METHOD'] === 'POST'){
-        /*echo "<pre>";
+        echo "<pre>";
         var_dump($_POST);
-        echo "</pre>";*/
+        echo "</pre>";
 
         $email      = mysqli_real_escape_string($db, $_POST['email']);
         $password   = mysqli_real_escape_string($db, $_POST['password']);
@@ -24,6 +33,7 @@
         $ciudad     = mysqli_real_escape_string($db, $_POST['ciudad']);
         $estado     = mysqli_real_escape_string($db, $_POST['estado']);
         $cp         = mysqli_real_escape_string($db, $_POST['cp']);
+        $admin      = "false";
 
         
 
@@ -65,8 +75,8 @@
             $passwordHash = password_hash($password, PASSWORD_BCRYPT);
 
             //Insertar en la Base de Datos
-            $query = "INSERT INTO CLIENTE(EMAIL, PASSWORD, NOMBRE, APELLIDO, CALLE, CIUDAD, ESTADO, CP) 
-            VALUES('$email', '$passwordHash', '$nombre', '$apellido', '$calle', '$ciudad ', '$estado', '$cp')";
+            $query = "INSERT INTO CLIENTE(EMAIL, PASSWORD, ADMIN, NOMBRE, APELLIDO, CALLE, CIUDAD, ESTADO, CP) 
+            VALUES('$email', '$passwordHash', $admin, '$nombre', '$apellido', '$calle', '$ciudad ', '$estado', '$cp')";
 
             //Guardar resultado del query
             $resultado = mysqli_query($db, $query);

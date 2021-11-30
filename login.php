@@ -33,6 +33,10 @@
             if($resultado->num_rows){
                 //Revisar si el password es correcto
                 $usuario = mysqli_fetch_assoc($resultado);
+                /*echo "<pre>";
+                var_dump($usuario);
+                echo "</pre>";
+                exit;*/
                 
                 //Verificar si el password es correcto
                 $auth = password_verify($password, $usuario['PASSWORD']);
@@ -44,6 +48,8 @@
                     //Llenar el arreglo de la sesion
                     $_SESSION['usuario'] = $usuario['EMAIL'];
                     $_SESSION['login']   = true;
+                    $_SESSION['admin']   = $usuario['ADMIN'];
+
 
                    header('Location: /admin');
 
