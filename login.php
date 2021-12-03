@@ -50,9 +50,19 @@
                     $_SESSION['login']   = true;
                     $_SESSION['admin']   = $usuario['ADMIN'];
                     $_SESSION['id']      = $usuario['ID_CLIENTE'];
+                    $_SESSION['nombre']  = $usuario['NOMBRE'];
 
+                    //Consultar cual es el IDcarrito del Cliente que esta haciendo login
+                    $idUsuario = $usuario['ID_CLIENTE'];
+                    $query     = "SELECT ID_CARRITO FROM CARRITO WHERE ID_CLIENTE = ${idUsuario}"; //BIEN
+                    $resultado = mysqli_query($db, $query);
+                    $carrito   = mysqli_fetch_assoc($resultado); //BIEN
 
-                   header('Location: /');
+                    //Guardar el ID del carrito en la global SESSION
+                    $_SESSION['id_carrito'] = $carrito['ID_CARRITO']; //BIEN
+                    
+
+                    header('Location: /');
 
                 }else{
                     $errores[] = "El password es incorrecto";
