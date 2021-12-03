@@ -25,7 +25,10 @@
                     
 
                     <!--Añadir el enlace a Videojuego.php-->
-                    <a href="videojuego.php?id=<?php echo $videojuego['ID'];?>" class="boton-verde-block">Ver Videojuego</a>
+                    <a href="videojuego.php?id=<?php echo $videojuego['ID'];?>" class="boton-verde-block">
+                    Ver Videojuego</a>
+                    <a href="add-to-carrito.php?id=<?php echo $videojuego['ID'];?>" class="boton-verde-block">
+                    Añadir al carrito</a>
                     
                 </div><!--Contenido card-------------------------------------------------------->
             </div><!--Card----------------------------------------------------------------------------->
@@ -34,4 +37,5 @@
 
 <?php 
     //Cerrar la conexion 
+    mysqli_close($db);
 ?>

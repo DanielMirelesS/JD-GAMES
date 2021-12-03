@@ -481,9 +481,11 @@ table.propiedades{
         border-radius: 10px;
     }
 
+    .link{
+        text-decoration: none;
+        text-align: center;
+    }
 
-
-    
 }
 
 @media (max-width: 600px) { 
@@ -580,4 +582,28 @@ table.propiedades{
 .contenido-centrado{
     max-width: 80rem;
     
+}
+
+.imagen-carrito{
+    width: 10rem;
+}
+
+.contenedor-producto{
+    box-sizing: border-box;
+    font-family: var(--fuentePrincipal);
+    color: var(--blanco);
+    font-size: 14px;
+}
+
+.contenedor-producto-grid{
+    display: flex !important;
+    flex-direction: row;
+}
+
+.renglon-seccion{
+    margin-top: -4px;
+    margin-bottom: 3px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
 }

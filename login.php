@@ -49,6 +49,7 @@
                     $_SESSION['usuario'] = $usuario['EMAIL'];
                     $_SESSION['login']   = true;
                     $_SESSION['admin']   = $usuario['ADMIN'];
+                    $_SESSION['id']      = $usuario['ID_CLIENTE'];
 
 
                    header('Location: /');

@@ -21,9 +21,9 @@
     $admin      = "false";
     //----------------------------------------------SERVER-------------------------------------------------------------->
     if($_SERVER['REQUEST_METHOD'] === 'POST'){
-        echo "<pre>";
+        /*echo "<pre>";
         var_dump($_POST);
-        echo "</pre>";
+        echo "</pre>";*/
 
         $email      = mysqli_real_escape_string($db, $_POST['email']);
         $password   = mysqli_real_escape_string($db, $_POST['password']);
@@ -39,7 +39,7 @@
 
         //Checar errores
         if(!$email){
-            $errores[] = "Debes agregar tu email";
+            $errores[] = "Debes agregar un email válido";
         }
 
         if(!$password){
@@ -74,14 +74,26 @@
             //Hashear password 
             $passwordHash = password_hash($password, PASSWORD_BCRYPT);
 
-            //Insertar en la Base de Datos
+            //INSERTAR EN LA BASE DE DATOS-----------------------------------------------------------------------------
             $query = "INSERT INTO CLIENTE(EMAIL, PASSWORD, ADMIN, NOMBRE, APELLIDO, CALLE, CIUDAD, ESTADO, CP) 
             VALUES('$email', '$passwordHash', $admin, '$nombre', '$apellido', '$calle', '$ciudad ', '$estado', '$cp')";
 
             //Guardar resultado del query
             $resultado = mysqli_query($db, $query);
             if($resultado){
-                header('Location: /login.php');
+
+                $queryIDCliente = "SELECT ID_CLIENTE FROM CLIENTE WHERE EMAIL = '${email}'";
+                $resultadoID    = mysqli_query($db, $queryIDCliente);
+                
+                $clienteArray   = mysqli_fetch_assoc($resultadoID);
+                $clienteID      = $clienteArray['ID_CLIENTE'];
+                
+                $queryCarrito    = "INSERT INTO CARRITO(ID_CLIENTE) VALUES($clienteID)";
+                $resultadoCarrito = mysqli_query($db, $queryCarrito);
+
+                if($resultadoCarrito){
+                    header('Location: /login.php');
+                }
             }
         }
     }
