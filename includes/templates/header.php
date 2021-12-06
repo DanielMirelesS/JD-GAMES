@@ -39,7 +39,7 @@
     <!-------------------------------------------------------------------------------->
 
     <nav class="navegacion">
-        <a class= "navegacion__enlace navegacion__enlace--activo" href="index.php">CONSOLAS</a>
+        <a class= "navegacion__enlace" href="index.php">CONSOLAS</a>
         <a class= "navegacion__enlace" href="nosotros.php">NOSOTROS</a>
         <a class= "navegacion__enlace" href="/catalogoX.php">CATÁLOGO</a>
 
@@ -53,9 +53,5 @@
             <?php } ?>
             <a class= "navegacion__enlace" href="../../cerrar-sesion.php">Cerrar sesion</a>
         <?php endif; ?>
-
-        
-
-       
 
     </nav>
