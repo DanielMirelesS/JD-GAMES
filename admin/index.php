@@ -66,7 +66,7 @@
 
         <a class="botonNueva" href="/admin/propiedades/crear.php">Nuevo videojuego</a>
 
-        <table class="propiedades">
+        <table class="videojuegos">
             <thead>
                 <tr>
                     <th>ID</th>

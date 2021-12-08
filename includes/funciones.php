@@ -1,5 +1,6 @@
 <?php
 
+    error_reporting(E_ALL ^ E_NOTICE);  
     require 'app.php';
 
     function incluirTemplate( string $nombre ){

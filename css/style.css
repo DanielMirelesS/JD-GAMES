@@ -364,7 +364,7 @@ h3{
     margin-left: 10%;
 }
 
-table.propiedades{
+table.videojuegos{
     margin-top: 4rem;
     width: 100%;
     border-spacing: 0;
@@ -372,17 +372,22 @@ table.propiedades{
 
 }
 
-.propiedades thead{
+.videojuegos thead{
     background-color:rgb(37, 177, 32); 
 
 }
 
-.propiedades th{
+.videojuegos th{
     color: white;
     padding: 2rem;
 }
 
-.propiedades .imagen-tabla{
+.videojuegos td{
+    color: white;
+    text-align: center;
+}
+
+.videojuegos .imagen-tabla{
     width: 10rem;
 }
 
@@ -398,7 +403,7 @@ table.propiedades{
     padding-right:40px;
     background-color:rgb(151, 1, 1); 
     display: block; 
-    width: 100%;
+    width: 90%;
 }
 
 .boton-verde-block{
@@ -413,6 +418,7 @@ table.propiedades{
     padding-right:40px;
     background-color:rgb(25, 145, 201);  
     display: block;
+    width: 90%;
 }
 
 .imagen-small{
@@ -606,4 +612,10 @@ table.propiedades{
     width: 100%;
     display: flex;
     flex-direction: row;
+}
+
+.cantidad-carrito{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
 }

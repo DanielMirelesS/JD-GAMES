@@ -30,8 +30,8 @@
     //var_dump($carritoIDArray['ID_CARRITO']); BIEN
     
     //Crear consulta para insertar en la tabla de VIDEOJUEGO_CARRITO
-    $queryInsertarCarrito = "INSERT INTO CARRITO_VIDEOJUEGO(ID_CARRITO, ID_VIDEOJUEGO) 
-    VALUES($carritoID, $idVideojuego)";
+    $queryInsertarCarrito = "INSERT INTO CARRITO_VIDEOJUEGO(ID_CARRITO, ID_VIDEOJUEGO, CANTIDAD) 
+    VALUES($carritoID, $idVideojuego, 1)";
     //var_dump($queryInsertarCarrito); CREO QUE BIEN
 
     //Insertar el carrito en CARRITO_VIDEOJUEGO
