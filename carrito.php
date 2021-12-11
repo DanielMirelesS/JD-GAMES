@@ -136,7 +136,7 @@
         <?php endwhile; ?>
         <div class="contenedor-pago">
                  <h3>Subtotal: $<?php echo $arraySuma['SUBTOTAL'] ?></h3>
-                 <a href="#">Proceder al pago</a>
+                 <a href="/check-out.php?<?php echo $id_carrito; ?>">Proceder al pago</a>
         </div>
         
     </main>

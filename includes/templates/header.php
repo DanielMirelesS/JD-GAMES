@@ -5,9 +5,7 @@
     }
 
     $auth = $_SESSION['login'] ?? false;
-
-        
-
+    
 ?>
 
 <!DOCTYPE html>

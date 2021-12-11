@@ -13,39 +13,52 @@
     //Leer el ID del videojuego seleccionado
     $id = $_GET['id'];
     $idVideojuego = filter_var($id, FILTER_VALIDATE_INT);
-    //var_dump($idVideojuego); BIEN
+    
 
     //Leer el ID del Cliente, lo usaré para consultar el ID del Carrito en la tabla CARRITO
     $id = $_SESSION['id'];
-    //var_dump($id); BIEN
+    
 
     //Crear consulta SQL para obtener el ID del CARRITO
     $queryCarritoID     = "SELECT ID_CARRITO FROM CARRITO WHERE ID_CLIENTE = ${id}";
-    //var_dump($queryCarritoID); BIEN
-    $resultadoCarritoID = mysqli_query($db, $queryCarritoID);
-    //var_dump($resultadoCarritoID);BIEN
-    $carritoIDArray     = mysqli_fetch_assoc($resultadoCarritoID);
-    //var_dump($carritoIDArray); BIEN
-    $carritoID          = $carritoIDArray['ID_CARRITO'];
-    //var_dump($carritoIDArray['ID_CARRITO']); BIEN
     
-    //Crear consulta para insertar en la tabla de VIDEOJUEGO_CARRITO
-    $queryInsertarCarrito = "INSERT INTO CARRITO_VIDEOJUEGO(ID_CARRITO, ID_VIDEOJUEGO, CANTIDAD) 
-    VALUES($carritoID, $idVideojuego, 1)";
-    //var_dump($queryInsertarCarrito); CREO QUE BIEN
+    $resultadoCarritoID = mysqli_query($db, $queryCarritoID);
+    
+    $carritoIDArray     = mysqli_fetch_assoc($resultadoCarritoID);
+    
+    $carritoID          = $carritoIDArray['ID_CARRITO'];
+    //TODO LO ANTERIOR BIEN----------------------------------------------------------------
+    
+    
+    //Verificar si ya existe ese producto en el carrito
+    $queryExisteEnCarrito = "SELECT ID_VIDEOJUEGO, ID_CARRITO FROM CARRITO_VIDEOJUEGO WHERE ID_VIDEOJUEGO = ${idVideojuego} AND ID_CARRITO = ${carritoID}";//BIEN
+    $resultadoExiste      = mysqli_query($db, $queryExisteEnCarrito);//BIEN
+    $verificacion         = mysqli_fetch_assoc($resultadoExiste);
+    //var_dump($verificacion);
+    //exit;
 
-    //Insertar el carrito en CARRITO_VIDEOJUEGO
-    $insercion = mysqli_query($db, $queryInsertarCarrito);
-    if($insercion){
-        header('Location: /catalogoX.php');
-    }
+        if($verificacion===NULL){
+            //Crear consulta para insertar en la tabla de VIDEOJUEGO_CARRITO
+            $queryInsertarCarrito = "INSERT INTO CARRITO_VIDEOJUEGO(ID_CARRITO, ID_VIDEOJUEGO, CANTIDAD) 
+            VALUES($carritoID, $idVideojuego, 1)";
+            //var_dump($queryInsertarCarrito); CREO QUE BIEN
 
+            //Insertar el carrito en CARRITO_VIDEOJUEGO
+            $insercion = mysqli_query($db, $queryInsertarCarrito);
+    
+            if($insercion){
+                header('Location: /catalogoX.php');
+            }
+        }
+
+
+    //-----------------------------------------------------------------------------------------------------
 
      //Incluye el header
      require 'includes/funciones.php';
      incluirTemplate('header');
 ?>
-
+    <h3>Este producto ya ha sido agregado, consulte su carrito de compras</h3>
 
 
 <?php
