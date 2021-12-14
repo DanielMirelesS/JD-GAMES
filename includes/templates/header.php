@@ -18,6 +18,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JD GAMES</title>
     <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glider-js@1.7.7/glider.min.css">
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
@@ -40,6 +41,7 @@
 <?php if(!$_GET['mostrar']){?>
         
     <nav class="navegacion">
+ 
         <a class= "navegacion__enlace" href="/index.php">CONSOLAS</a>
         <a class= "navegacion__enlace" href="/nosotros.php">NOSOTROS</a>
         <a class= "navegacion__enlace" href="/catalogoX.php">CATÁLOGO</a>

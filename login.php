@@ -109,7 +109,7 @@
             </form>
 
             <div class="login-registro-btn">
-            <a href="registro.php">No tienes una cuenta? Registrate aquí</a>
+            <a href="registro.php">¿No tienes una cuenta? Registrate aquí</a>
             </div>
             
         </div>
@@ -117,6 +117,7 @@
         
     </main>
 
+    
 <?php
     //incluirTemplate('footer')
 ?>

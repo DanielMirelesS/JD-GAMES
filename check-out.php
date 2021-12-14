@@ -43,8 +43,12 @@
         $total = round($total, 2);//BIEN
         $cuentaProductos = $arraySuma['CUENTA_PRODUCTOS']-1;
 
-        //var_dump($cuentaProductos);
-        //exit;
+        //CONSULTA INFORMACION DEL CLIENTE
+        $queryInformacion = "SELECT * FROM CLIENTE WHERE ID_CLIENTE = ${id_cliente}";
+        $arrayInformacion = mysqli_query($db, $queryInformacion);
+        $informacion      = mysqli_fetch_assoc($arrayInformacion);
+        
+
     }
 
 
@@ -84,23 +88,19 @@
                         </li>
 
                         <li>
-                            <span>JOSUE BENJAMIN RANGEL</span>
+                            <span><?php echo $informacion['NOMBRE'];?>  <?php echo $informacion['APELLIDO'];?></span>
                         </li>
 
                         <li>
-                            <span>Av Zuazua </span>
+                            <span><?php echo $informacion['CALLE'];?> </span>
                         </li>
 
                         <li>
-                            <span>MATAMOROS, COAHUILA</span>
+                            <span><?php echo $informacion['CIUDAD'];?>, <?php echo $informacion['ESTADO'];?></span>
                         </li>
 
                         <li>
-                            <span>27448</span>
-                        </li>
-
-                        <li>
-                            <span>Telefono: 8713956683</span>
+                            <span><?php echo $informacion['CP'];?></span>
                         </li>
                     </ul>
                 </div>
@@ -145,7 +145,7 @@
                         //element.innerHTML = '';
                         //element.innerHTML = 'actura.php';
                         // Or go to another URL:  actions.redirect('thank_you.html');
-                        actions.redirect('https://jojocomics.herokuapp.com/factura.php');//PENDIENTE CAMBIAR EL URL!!                     
+                        actions.redirect('https://jdgames.herokuapp.com/factura.php');//PENDIENTE CAMBIAR EL URL!!                     
                     });
                     },
 
