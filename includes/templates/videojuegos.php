@@ -20,14 +20,16 @@
                 <img loading="lazy" src="/imagenes/<?php echo $videojuego['IMAGEN'];?>" alt="card">
            
                 <div class="contenido-card">
-                    <h3><?php echo $videojuego['NOMBRE'];?></h3>
-                    <p class="precio"><?php echo $videojuego['PRECIO'];?></p>
+                    <div class="titulo">
+                        <h3><?php echo $videojuego['NOMBRE'];?></h3>
+                    </div>
+                    <p class="precio">$<?php echo $videojuego['PRECIO'];?></p>
                     
 
                     <!--Añadir el enlace a Videojuego.php-->
-                    <a href="videojuego.php?id=<?php echo $videojuego['ID'];?>" class="boton-verde-block">
+                    <a href="videojuego.php?id=<?php echo $videojuego['ID'];?>" class="boton-catalogo">
                     Ver Videojuego</a>
-                    <a href="add-to-carrito.php?id=<?php echo $videojuego['ID'];?>" class="boton-verde-block">
+                    <a href="add-to-carrito.php?id=<?php echo $videojuego['ID'];?>" class="boton-catalogo">
                     Añadir al carrito</a>
                     
                 </div><!--Contenido card-------------------------------------------------------->

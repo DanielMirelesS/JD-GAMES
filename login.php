@@ -80,7 +80,7 @@
 ?>
 
     <main>
-        <h1>Iniciar sesión</h1>
+       
 
         <?php foreach($errores as $error): ?>
             <div class="alerta error">
@@ -88,24 +88,35 @@
             </div>
         <?php endforeach; ?>
 
-        <form method="POST" class="formulario" novalidate>
-            <fieldset>
-                <legend>Email y password</legend>
+        <div class="login-box">
+            <h1>Iniciar sesión</h1>
+            <form method="POST" class="formulario" novalidate>
 
-                <label for="email">E-mail</label>
-                <input type="email" name="email" placeholder="Tu Email" id="email">
+                <div class="textbox">
+                    <!--<label for="email">E-mail</label>-->
+                    <i class="fas fa-user"></i>
+                    <input type="email" name="email" placeholder="Tu Email" id="email">
+                </div>
 
-                <label for="password">Password</label>
-                <input type="password" name="password" placeholder="Tu Password" id="password">
-            </fieldset>
+                <div class="textbox">
+                    <!--<label for="password">Password</label>-->
+                    <i class="fas fa-lock"></i>
+                    <input type="password" name="password" placeholder="Tu Password" id="password">
+                </div>
 
-            <input type="submit" value="Iniciar Sesión">
-        </form>
-        <div>
+
+                <input class="btn" type="submit" value="Iniciar Sesión">
+            </form>
+
+            <div class="login-registro-btn">
             <a href="registro.php">No tienes una cuenta? Registrate aquí</a>
+            </div>
+            
         </div>
+        
+        
     </main>
 
 <?php
-    incluirTemplate('footer')
+    //incluirTemplate('footer')
 ?>

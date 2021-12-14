@@ -43,7 +43,7 @@ img{
 }
 h1,h2,h3{
     text-align: center;
-    color:var(--secundario);
+    color:#1fb9cc;
     font-family: var(--fuentePrincipal);
 }
 h1{
@@ -373,7 +373,7 @@ table.videojuegos{
 }
 
 .videojuegos thead{
-    background-color:rgb(37, 177, 32); 
+    background-color:var(--primOscuro);
 
 }
 
@@ -401,9 +401,10 @@ table.videojuegos{
     padding-bottom:1.5rem;
     padding-left:40px;
     padding-right:40px;
-    background-color:rgb(151, 1, 1); 
+    background-color:  #971a00; 
     display: block; 
     width: 90%;
+    
 }
 
 .boton-verde-block{
@@ -555,7 +556,7 @@ table.videojuegos{
 
 .contenedor-videojuegos{
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     gap: 2rem 2rem;
     
 }
@@ -566,19 +567,32 @@ table.videojuegos{
     
 }
 
-.card h3, p{
+.card h3{
     margin: 0;
+    font-size: 2rem;
+    color: var(--blanco);
 }
+
+.card p{
+    margin: 0;
+    
+}
+
+
 
 .contenido-card{
     padding: 2rem;
     
 }
+.card .img{
+    width: 50%;
+}
 
 .contenido-card .precio{
-    color:rgba(3, 185, 240, 0.911);
+    color:var(--blanco);
     font-weight: bold;
-    font-size: 2.4rem;
+    font-size: 2rem;
+    text-align: center;
 }
 
 .ver-todos a{
@@ -588,6 +602,13 @@ table.videojuegos{
 .contenido-centrado{
     max-width: 80rem;
     
+}
+
+.contenedor_carrito_productos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 15rem;
 }
 
 .imagen-carrito{
@@ -601,6 +622,10 @@ table.videojuegos{
     font-size: 14px;
 }
 
+.lista-info-producto{
+    list-style-type: none;
+}
+
 .contenedor-producto-grid{
     display: flex !important;
     flex-direction: row;
@@ -610,12 +635,275 @@ table.videojuegos{
     margin-top: -4px;
     margin-bottom: 3px;
     width: 100%;
-    display: flex;
+    /*display: flex;
     flex-direction: row;
+    align-items: flex-start;*/
 }
 
 .cantidad-carrito{
     display: flex;
     flex-direction: row;
     align-items: flex-start;
+    
+}
+
+.carrito__producto{
+    display: flex;
+    justify-content: center;
+}
+
+
+
+.carrito__info--compra{
+    font-family: var(--fuentePrincipal);
+    color: var(--blanco);
+    padding: 0 3rem;
+    align-self: start;
+    
+}
+
+.carrito__info--titulo{
+    font-weight: bold;
+    font-size: 2rem;
+    line-height: 1rem;
+}
+
+.carrito__imagen{
+    height: 22rem;
+    width: 15rem;
+    /*height: 32rem;*/
+}
+
+.carrito_eliminar{
+    margin-left: 1rem;
+    
+}
+
+.carrito_eliminar a{
+    color: #FF5733;
+}
+
+.carrito_eliminar a:hover{
+    color:  #cacfd2;
+}
+
+.boton-catalogo{
+    font-family: var(--fuentePrincipal);
+    color: var(--blanco);
+    margin: 1rem;
+    font-size: 1.5rem;
+    text-align: center;
+    padding-top:1.5rem;
+    padding-bottom:1.5rem;
+    padding-left:40px;
+    padding-right:40px;
+    background-color:#1fb9cc;  
+    display: block;
+    width: 95%;
+}
+
+.contenido-card .titulo{
+    height: 5rem;
+}
+
+.card a:hover{
+    filter: brightness(70%);
+}
+
+.login-box{
+    width: 280px;
+    position: absolute;
+    top: 48%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color:white;
+    margin-bottom: 10rem;
+}
+
+.textbox{
+    width: 100%;
+    overflow: hidden;
+    font-size: 20px;
+    padding: 8px 0;
+    margin: 8px 0;
+    border-bottom: 1px solid  #1fb9cc;
+    
+}
+
+.textbox input{
+    border:none;
+    outline: none;
+    background:none;
+    color:white;
+    font-size: 18px;
+    width: 80%;
+    float: left;
+    margin: 0 10px;
+}
+
+.btn{
+    width: 100%;
+    background:none;
+    border: 2px solid  #1fb9cc;
+    color:white;
+    text-transform: uppercase;
+    padding: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    margin: 12px 0;
+    transition: color 0.4s linear;
+    position: relative;
+}
+
+.login-box h1{
+    float: left;
+    font-size: 40px;
+    color: #1fb9cc;
+    border-bottom: 6px solid  #1fb9cc;
+    margin-bottom: 50px;
+    padding: 13px 0;
+    margin-top: 5rem;
+}
+
+.textbox i{
+    width: 26px;
+    float: left;
+    text-align: center;
+}
+
+.btn:hover{
+    background-color: #1fb9cc;
+    color: var(--blanco);
+}
+
+.login-registro-btn{
+    display: flex;
+    align-items: center;
+}
+
+.login-registro-btn a{
+    text-align: center;
+    font-family: var(--fuentePrincipal);
+    font-size: 1.9rem;
+    color: var(--blanco);
+}
+
+.login-registro-btn a:hover{
+    color:  #1fb9cc;
+}
+
+/* TODO EL CSS DEL REGISTRO-------------------------------------------------------------------------------------*/
+.form-register {
+    width: 400px;
+    background: var(--primOscuro);
+    padding: 30px;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    border-radius: 4px;
+    font-family: var(--fuentePrincipal);
+    color: white;
+    box-shadow: 7px 13px 37px #000;
+  }
+  
+  .form-register h4 {
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+  
+  .controls {
+    width: 100%;
+    background: var(--primOscuro);
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+    border: 1px solid #1fb9cc;
+    font-family: var(--fuentePrincipal);
+    font-size: 15px;
+    color: white;
+  }
+  
+  .form-register p {
+    height: 40px;
+    text-align: center;
+    font-size: 18px;
+    line-height: 40px;
+  }
+  
+  .form-register a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .form-register a:hover {
+    color: white;
+    text-decoration: underline;
+  }
+  
+  .form-register .botons {
+    width: 100%;
+    background: #1fb9cc;
+    border: none;
+    padding: 12px;
+    color: white;
+    margin: 16px 0;
+    font-size: 16px;
+  }
+
+  .registro h2{
+      color: #1fb9cc;
+  }
+
+  .login-request{
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  }
+
+  .login-request-btn{
+    text-align: center;
+    font-family: var(--fuentePrincipal);
+    font-size: 1.9rem;
+    color: var(--blanco);
+    text-align: center;
+}
+
+.contenedor_videojuego{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+.contenedor_videojuego .videojuego_imagen{
+    margin-left: 10rem;
+    box-shadow: 7px 13px 37px #000;
+    width: 100%;
+    margin-bottom: 5rem;
+}
+
+.contenedor_videojuego .resumen-videojuego{
+    margin: 0 10rem;
+    padding: 2rem;
+    
+}
+
+.contenedor .botonVolver{
+    font-family: var(--fuentePrincipal);
+    color: var(--blanco);
+    font-size: 1.7rem;
+    padding-top:1.5rem;
+    padding-bottom:1.5rem;
+    padding-left:0px;
+    padding-right:40px;
+    /*margin-bottom: 10rem;*/
+    display: block;
+    color: #1fb9cc;
+    
+}
+.contenedor-pago{
+    display: flex;
+    flex-direction: column;
+    /*justify-content: center;*/
+    align-items: center;
 }

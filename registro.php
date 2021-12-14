@@ -92,7 +92,7 @@
                 $resultadoCarrito = mysqli_query($db, $queryCarrito);
 
                 if($resultadoCarrito){
-                    header('Location: /login.php');
+                    header('Location: /login.php?mostrar=1');
                 }
             }
         }
@@ -105,7 +105,9 @@
 
     <!----------------------------------------------MAIN-------------------------------------------------------------->
     <main class="contenedor">
-        <h2>Registro</h2>
+        <div class="registro">
+            <h2>Registro</h2>
+        </div>
 
         <?php foreach($errores as $error): ?>
         <div class="alerta error">
@@ -114,44 +116,39 @@
             
         <?php endforeach; ?> 
         
-        <form class="formulario" method="POST">
-            <fieldset>
-                <legend>Informacion de inicio de sesión</legend>
-            
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" placeholder="Tu email" value="<?php echo $email; ?>">
+        <div class="form-register">
+            <form class="formulario" method="POST">
 
-                <label for="password">Contraseña:</label>
-                <input type="password" id="password" name="password" placeholder="Tu contraseña" value="<?php echo $password; ?>">
+                    <!--<label for="email">Email:</label>-->
+                    <input class="controls" type="email" id="email" name="email" placeholder="Tu email" value="<?php echo $email; ?>">
+
+                    <!--<label for="password">Contraseña:</label>-->
+                    <input class="controls" type="password" id="password" name="password" placeholder="Tu contraseña" value="<?php echo $password; ?>">
 
 
-            </fieldset>
+                    <!--<label for="nombre">Nombre:</label>-->
+                    <input class="controls" type="text" id="nombre" name="nombre" placeholder="Tu nombre" value="<?php echo $nombre; ?>">
 
-            <fieldset>
-                <legend>Datos personales:</legend>
+                    <!--<label for="apellido">Apellido:</label>-->
+                    <input class="controls" type="text" id="apellido" name="apellido" placeholder="Tu apellido" value="<?php echo $apellido; ?>">
 
-                <label for="nombre">Nombre:</label>
-                <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" value="<?php echo $nombre; ?>">
+                    <!--<label for="calle">Calle:</label>-->
+                    <input class="controls" type="text" id="calle" name="calle" placeholder="Calle" value="<?php echo $calle; ?>">
 
-                <label for="apellido">Apellido:</label>
-                <input type="text" id="apellido" name="apellido" placeholder="Tu apellido" value="<?php echo $apellido; ?>">
+                    <!--<label for="ciudad">Ciudad:</label>-->
+                    <input class="controls" type="text" id="ciudad" name="ciudad" placeholder="Tu ciudad" value="<?php echo $ciudad; ?>">
 
-                <label for="calle">Calle:</label>
-                <input type="text" id="calle" name="calle" placeholder="Calle" value="<?php echo $calle; ?>">
+                    <!--<label for="estado">Estado:</label>-->
+                    <input class="controls" type="text" id="estado" name="estado" placeholder="El estado donde vives" value="<?php echo $estado; ?>">
 
-                <label for="ciudad">Ciudad:</label>
-                <input type="text" id="ciudad" name="ciudad" placeholder="Tu ciudad" value="<?php echo $ciudad; ?>">
+                    <!--<label for="cp">Código Postal:</label>-->
+                    <input class="controls" type="text" id="cp" name="cp" placeholder="Ej. 25788" value="<?php echo $cp; ?>">
 
-                <label for="estado">Estado:</label>
-                <input type="text" id="estado" name="estado" placeholder="El estado donde vives" value="<?php echo $estado; ?>">
+                
 
-                <label for="cp">Código Postal:</label>
-                <input type="text" id="cp" name="cp" placeholder="Ej. 25788" value="<?php echo $cp; ?>">
-
-            </fieldset>
-
-            <input type="submit" value="Registrarse">
-        </form>
+                <input class="botons" type="submit" value="Registrarse">
+            </form>
+        </div>
     </main>
 
 <?php

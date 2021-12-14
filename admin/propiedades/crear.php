@@ -122,7 +122,6 @@
     <main class = "contenedor">
         <h1>Crear</h1>
 
-        <a class="botonNueva" href="/admin/index.php">Volver</a>
 
         <?php foreach($errores as $error): ?>
         <div class="alerta error">
@@ -131,49 +130,42 @@
             
         <?php endforeach; ?> 
 
-        <form class="formulario" method="POST" action="/admin/propiedades/crear.php" enctype="multipart/form-data">
-            <fieldset>
-                <legend>Informacion General</legend>
-
-                <label for="titulo">Titulo:</label>
-                <input type="text" id="titulo" name="titulo" placeholder="Titulo videojuego" value="<?php echo $titulo; ?>">
-
-                <label for="precio">Precio:</label>
-                <input type="number" id="precio" name="precio" placeholder="Precio videojuego" value="<?php echo $precio; ?>">
-
-                <label for="descripcion">Descripcion:</label>
-                <textarea id="descripcion" name="descripcion"><?php echo $descripcion; ?></textarea>
-
-                <label for="imagen">Imagen:</label>
-                <input type="file" id="imagen" accept="image/jpeg, image/png" name="imagen">
-
-            </fieldset>
-
-            <fieldset>
-                <legend>Stock Videojuego</legend>
-
-                <label for="existencia">Existencia:</label>
-                <input type="number" id="existencia" name="existencia" placeholder="Ej: 3" min="1" 
-                value="<?php echo $existencia; ?>">
-
-            </fieldset>
-
-            <fieldset>
-                <legend>Clasificacion</legend>
+        <div class="form-register">
+            <form class="formulario" method="POST" action="/admin/propiedades/crear.php" enctype="multipart/form-data">
                 
-                <select name="clasificacion">
-                    <option value="">--Seleccione--</option>
-                    <?php while($row = mysqli_fetch_assoc($resultado) ) : ?>
-                        <option <?php echo $ID_clasificacion == $row['ID_CLASIFICACION'] ? 'selected' : ''; ?>  value="<?php echo $row['ID_CLASIFICACION']; ?>">
-                         <?php echo $row['CLASIFICACION']; ?> </option>
+            <a class="botonVolver" href="/admin/index.php">←Volver</a>
+
+                    <label for="titulo">Titulo:</label>
+                    <input class="controls" type="text" id="titulo" name="titulo" placeholder="Titulo videojuego" value="<?php echo $titulo; ?>">
+
+                    <label for="precio">Precio:</label>
+                    <input class="controls" type="number" id="precio" name="precio" placeholder="Precio videojuego" value="<?php echo $precio; ?>">
+
+                    <label for="descripcion">Descripcion:</label>
+                    <textarea class="controls" id="descripcion" name="descripcion"><?php echo $descripcion; ?></textarea>
+
+                    <label for="imagen">Imagen:</label>
+                    <input class="controls" type="file" id="imagen" accept="image/jpeg, image/png" name="imagen">
+
+                    <label for="existencia">Existencia:</label>
+                    <input class="controls" type="number" id="existencia" name="existencia" placeholder="Ej: 3" min="1" 
+                    value="<?php echo $existencia; ?>">
 
 
-                    <?php endwhile; ?>
-                </select>
+                    <select class="controls" name="clasificacion">
+                        <option value="">--Clasificacion--</option>
+                        <?php while($row = mysqli_fetch_assoc($resultado) ) : ?>
+                            <option <?php echo $ID_clasificacion == $row['ID_CLASIFICACION'] ? 'selected' : ''; ?>  value="<?php echo $row['ID_CLASIFICACION']; ?>">
+                            <?php echo $row['CLASIFICACION']; ?> </option>
 
-            </fieldset>
-            <input type="submit" value="Crear videojuego">
-        </form>
+
+                        <?php endwhile; ?>
+                    </select>
+
+                </fieldset>
+                <input class="botons" type="submit" value="Crear videojuego">
+            </form>
+        </div>
     </main>
 
 <?php

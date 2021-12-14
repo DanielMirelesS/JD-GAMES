@@ -10,7 +10,9 @@
 
         <!--AGREGAR ESTILOS-->
         <!--Centrar texto-->
-        <a href="login.php">Inicia sesion aquí para acceder a tu carrito</a>
+        <div class="login-request">
+            <a class="login-request-btn" href="login.php?mostrar=1">Inicia sesion aquí para acceder a tu carrito</a>
+        </div>
     </main>
 
 <?php

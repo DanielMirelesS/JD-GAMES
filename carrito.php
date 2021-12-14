@@ -56,11 +56,12 @@
             <div class="titulo-carrito">               
                 <h1>Tu carrito de compras <?php echo $_SESSION['nombre']; ?></h1>
 
-            <div>
+            <!--<div>
                 <a href="/delete-from-carrito.php?id=" class="link">Eliminar todos los articulos del carrito</a>
-            </div>
+            </div>-->
         </div><!--Header del carrito------------------------------------------------------------>
 
+        <div class="contenedor_carrito_productos">
 
         <?php while($carrito   = mysqli_fetch_assoc($resultado)): 
 
@@ -89,7 +90,7 @@
                             </li>
 
                             <li>
-                                <p>Precio: $<?php echo $videojuego['PRECIO'];?></p>
+                                <span>Precio: $<?php echo $videojuego['PRECIO'];?></span>
                             </li>
 
                             <li>
@@ -103,7 +104,7 @@
 
                         <div class="renglon-seccion">
                             <div class="cantidad-carrito">
-                                <p>Cantidad:</p>
+                                <span>Cantidad:</span>
                                 <!--<select name="cantidad" id="cantidad">
                                     <//?php //for($i = 1; $i <= $existencia['EXISTENCIA']; $i++){?>
                                         <option>
@@ -128,15 +129,20 @@
                             </div>
                             
 
-                            <a href="/delete-from-carrito.php?id=<?php echo $carrito['ID'];?>">Eliminar</a>
+                            <div class="carrito_eliminar">
+                                <a href="/delete-from-carrito.php?id=<?php echo $carrito['ID'];?>">Eliminar</a>
+                            </div>
                         </div>
                     </div><!--Contenedor de la informacion del producto------------------------------------------>
             </div><!--Contenedor grid-------------------------------------------------------------------------->
         </div><!--Contenedor del producto entero------------------------------------------------------------->
         <?php endwhile; ?>
+        </div>
         <div class="contenedor-pago">
                  <h3>Subtotal: $<?php echo $arraySuma['SUBTOTAL'] ?></h3>
-                 <a href="/check-out.php?<?php echo $id_carrito; ?>">Proceder al pago</a>
+                 <div class="login-registro-btn">
+                    <a href="/check-out.php?id=<?php echo $id_carrito; ?>">Proceder al pago</a>
+                 </div>
         </div>
         
     </main>

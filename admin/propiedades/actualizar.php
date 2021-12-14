@@ -92,8 +92,6 @@
         }
         
 
-
-
         /*echo "<pre>";
         var_dump($errores);
         echo "</pre>";*/
@@ -125,10 +123,6 @@
             }
 
 
-
-
-
-
             //Insertar en la base de datos
             $query = " UPDATE VIDEOJUEGO SET NOMBRE = '${titulo}', PRECIO = ${precio}, IMAGEN = '${nombreImagen}', DESCRIPCION = '${descripcion}',
              EXISTENCIA = ${existencia}, ID_CLASIFICACION = ${ID_clasificacion} WHERE ID_VIDEOJUEGO = ${id} ";
@@ -154,8 +148,6 @@
     <main class = "contenedor">
         <h1>Actualizar videojuego</h1>
 
-        <a class="botonNueva" href="/admin/index.php">Volver</a>
-
         <?php foreach($errores as $error): ?>
         <div class="alerta error">
             <?php echo $error; ?>
@@ -163,39 +155,32 @@
             
         <?php endforeach; ?> 
 
+        <div class="form-register">
         <form class="formulario" method="POST" enctype="multipart/form-data">
-            <fieldset>
-                <legend>Informacion General</legend>
+            
+                <a class="botonVolver" href="/admin/index.php">Volver</a>
 
                 <label for="titulo">Titulo:</label>
-                <input type="text" id="titulo" name="titulo" placeholder="Titulo videojuego" value="<?php echo $titulo; ?>">
+                <input class="controls" type="text" id="titulo" name="titulo" placeholder="Titulo videojuego" value="<?php echo $titulo; ?>">
 
                 <label for="precio">Precio:</label>
-                <input type="number" id="precio" name="precio" placeholder="Precio videojuego" value="<?php echo $precio; ?>">
+                <input class="controls" type="number" id="precio" name="precio" placeholder="Precio videojuego" value="<?php echo $precio; ?>">
 
                 <label for="descripcion">Descripcion:</label>
-                <textarea id="descripcion" name="descripcion"><?php echo $descripcion; ?></textarea>
+                <textarea class="controls" id="descripcion" name="descripcion"><?php echo $descripcion; ?></textarea>
 
                 <label for="imagen">Imagen:</label>
-                <input type="file" id="imagen" accept="image/jpeg, image/png" name="imagen">
+                <input class="controls" type="file" id="imagen" accept="image/jpeg, image/png" name="imagen">
 
-                <img src="/imagenes/<?php echo $imagenVideojuego ?>" class = "imagen-small">
-
-            </fieldset>
-
-            <fieldset>
-                <legend>Stock Videojuego</legend>
+                <img class="controls" src="/imagenes/<?php echo $imagenVideojuego ?>" class = "imagen-small">
 
                 <label for="existencia">Existencia:</label>
-                <input type="number" id="existencia" name="existencia" placeholder="Ej: 3" min="1" 
+                <input class="controls" type="number" id="existencia" name="existencia" placeholder="Ej: 3" min="1" 
                 value="<?php echo $existencia; ?>">
 
-            </fieldset>
-
-            <fieldset>
                 <legend>Clasificacion</legend>
                 
-                <select name="clasificacion">
+                <select class="controls" name="clasificacion">
                     <option value="">--Seleccione--</option>
                     <?php while($row = mysqli_fetch_assoc($resultado) ) : ?>
                         <option <?php echo $ID_clasificacion == $row['ID_CLASIFICACION'] ? 'selected' : ''; ?>  value="<?php echo $row['ID_CLASIFICACION']; ?>">
@@ -205,9 +190,10 @@
                     <?php endwhile; ?>
                 </select>
 
-            </fieldset>
-            <input type="submit" value="Actualizar videojuego">
+            
+            <input class="botons" type="submit" value="Actualizar videojuego">
         </form>
+        </div>
     </main>
 
 <?php
